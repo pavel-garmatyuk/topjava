@@ -28,6 +28,6 @@ if(firstCharSet == 'M') {
     System.out.println("I");
 } else {
     System.out.println("Other");
-} 
-    }
+}
+}
 }
