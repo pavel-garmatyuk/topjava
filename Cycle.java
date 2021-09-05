@@ -4,26 +4,23 @@ public class Cycle {
         for (int i = 0; i <= 20; i++) {
             System.out.println(i);
         }
-        
         System.out.println("while");
-        int a = -6;
-        int b = 6;
-        while(a <= b) {
-            System.out.println(a);
-            a+=2;
+        int counter = -6;
+        int endRange = 6;
+        while(counter <= endRange) {
+            System.out.println(counter);
+            counter+=2;
         }
-
         System.out.println("do while");
-        int numA = 10;
+        int counter = 10;
         //int numB = 20;
-        int sum = 0;
+        int sumOdd = 0;
         do {
-            if (numA % 2 != 0) {
-                sum += numA;
+            if (counter % 2 != 0) {
+                sumOdd += counter;
             }
-            numA++;
-        } while (numA <= 20);
-            System.out.println(sum);
-
+            counter++;
+        } while (counter <= 20);
+            System.out.println(sumOdd);
     }
 }
