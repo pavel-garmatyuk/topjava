@@ -4,16 +4,17 @@ public class Cycle {
         for (int i = 0; i <= 20; i++) {
             System.out.println(i);
         }
+
         System.out.println("while");
         int counter = -6;
         int endRange = 6;
         while(counter <= endRange) {
             System.out.println(counter);
-            counter+=2;
+            counter += 2;
         }
+
         System.out.println("do while");
         int counter = 10;
-        //int numB = 20;
         int sumOdd = 0;
         do {
             if (counter % 2 != 0) {
@@ -21,6 +22,6 @@ public class Cycle {
             }
             counter++;
         } while (counter <= 20);
-            System.out.println(sumOdd);
+          System.out.println(sumOdd);
     }
 }
