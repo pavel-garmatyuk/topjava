@@ -2,21 +2,20 @@ import java.util.Scanner;
 
 public class GuessNumber {
     public static void main(String[] args) {
-        Scanner console = new Scanner(System.in);
-        int secretNumber = (int) ((Math.random() * 100) + 1);
+        int secretNumber = (int) Math.round(Math.random() * 100);
         System.out.println("Угадай число от 0 до 100.");
-        while (true) {
-            int inputNumber = console.nextInt();
-            if (inputNumber == secretNumber) {
-                System.out.println("Поздравляю, число угадано!");
-                break;
-            } else if (inputNumber > secretNumber) {
+        int inputNumber;
+        do {
+            Scanner console = new Scanner(System.in);
+            inputNumber = console.nextInt();
+            if (inputNumber > secretNumber) {
                 System.out.println("Данное число больше того, что загадал компьютер");
-                continue;
             } else {
                 System.out.println("Данное число меньше того, что загадал компьютер");
-                continue;
             }
+        } while (inputNumber != secretNumber);
+        if (inputNumber == secretNumber) {
+            System.out.println("Поздравляю, число угадано!");
         }
     }
 }
