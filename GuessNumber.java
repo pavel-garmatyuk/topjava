@@ -3,14 +3,14 @@ import java.util.Scanner;
 public class GuessNumber {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
-        int number = (int) (Math.random() * 100);
+        int secretNumber = (int) ((Math.random() * 100) + 1);
         System.out.println("Угадай число от 0 до 100.");
-        while (true){
-            int input_number = Integer.parseInt(console.nextLine());
-            if (input_number == number){
+        while (true) {
+            int inputNumber = console.nextInt();
+            if (inputNumber == secretNumber) {
                 System.out.println("Поздравляю, число угадано!");
                 break;
-            } else if (input_number > number) {
+            } else if (inputNumber > secretNumber) {
                 System.out.println("Данное число больше того, что загадал компьютер");
                 continue;
             } else {
