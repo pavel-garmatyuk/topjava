@@ -2,7 +2,8 @@ public class Calculator {
 
     public static void main(String[] args) {
         System.out.println("Введите первый операнад, затем знак арифметической операции, и второй операнд.\n"
-                + "Разрешенные знаки арифметической операции: \nСложение + \nВычитание - \nУмножение * \nДеление / \nВозвести в степень ^ \nПолучить остаток от деления %");
+                + "Разрешенные знаки арифметической операции: \nСложение + \nВычитание - \nУмножение * \nДеление / "
+                + "\nВозвести в степень ^ \nПолучить остаток от деления %");
         Scanner console = new Scanner(System.in);
         int operandOne = console.nextInt();
         String symbol = console.nextLine();
