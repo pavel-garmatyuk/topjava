@@ -22,6 +22,6 @@ public class Cycle {
             }
             counter++;
         } while (counter <= 20);
-          System.out.println(sumOdd);
+        System.out.println(sumOdd);
     }
 }
