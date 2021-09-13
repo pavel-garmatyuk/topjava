@@ -8,15 +8,19 @@ public class Wolf {
     void move() {
         System.out.println("moving");
     }
+
     void sit() {
         System.out.println("to sit down");
     }
+
     void run() {
         System.out.println("to run");
     }
+
     void howl() {
         System.out.println("to howl");
     }
+    
     void hunt() {
         System.out.println("to start the hunt");
     }
