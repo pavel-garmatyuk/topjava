@@ -14,7 +14,7 @@ public class Cycle {
         }
 
         System.out.println("do while");
-        int counter = 10;
+        //int counter = 10;
         int sumOdd = 0;
         do {
             if (counter % 2 != 0) {
