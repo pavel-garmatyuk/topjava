@@ -1,43 +1,43 @@
 public class Calculator {
 
-    public static int calculation(int operandOne,String tmpSymbol, int operandTwo) {
-        switch (tmpSymbol) {
-            case "+": return addition(operandOne,operandTwo);
-            case "-": return subtraction(operandOne,operandTwo);
-            case "*": return multiplication(operandOne,operandTwo);
-            case "/": return division(operandOne,operandTwo);
-            case "%": return remainder(operandOne,operandTwo);
-            case "^": return exponentiation(operandOne,operandTwo);
+    public static int solve(int operandOne, String mathSign, int operandTwo) {
+        switch (mathSign) {
+            case "+": return add(operandOne,operandTwo);
+            case "-": return subtract(operandOne,operandTwo);
+            case "*": return multiply(operandOne,operandTwo);
+            case "/": return divide(operandOne,operandTwo);
+            case "%": return getRemainder(operandOne,operandTwo);
+            case "^": return range(operandOne,operandTwo);
             default: return 0;
         }
     }
 
-    private static int addition(int a, int b) {
+    private static int add(int a, int b) {
         int result = a + b;
         return result;
     }
 
-    private static int subtraction(int a, int b) {
+    private static int subtract(int a, int b) {
         int result = a - b;
         return result;
     }
 
-    private static int multiplication(int a, int b) {
+    private static int multiply(int a, int b) {
         int result = a * b;
         return result;
     }
 
-    private static int division(int a, int b) {
+    private static int divide(int a, int b) {
         int result = a / b;
         return result;
     }
 
-    private static int remainder(int a, int b) {
+    private static int getRemainder(int a, int b) {
         int result = a % b;
         return result;
     }
 
-    private static int exponentiation(int a, int b) {
+    private static int range(int a, int b) {
         int result = 1;
         for (int i = 1; i <= b; i++) {
             result *= a;
