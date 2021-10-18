@@ -1,6 +1,6 @@
 public class Calculator {
 
-    public static int calculation(int operandOne,String tmpSymbol, int operandTwo) throws ArithmeticException {
+    public static int calculation(int operandOne,String tmpSymbol, int operandTwo) {
         switch (tmpSymbol) {
             case "+": return addition(operandOne,operandTwo);
             case "-": return subtraction(operandOne,operandTwo);
@@ -8,7 +8,7 @@ public class Calculator {
             case "/": return division(operandOne,operandTwo);
             case "%": return remainder(operandOne,operandTwo);
             case "^": return exponentiation(operandOne,operandTwo);
-            default: throw new ArithmeticException();
+            default: return 0;
         }
     }
 

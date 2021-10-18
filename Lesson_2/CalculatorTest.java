@@ -14,7 +14,7 @@ public class CalculatorTest {
             System.out.println("Хотите продолжить вычисления? [yes/no]:");
             question = console.nextLine();
 
-            while (true) {
+            while (!question.equalsIgnoreCase("no")) {
             if (question.equalsIgnoreCase("no") || question.equalsIgnoreCase("yes")) {
                 break;
             } else {
@@ -22,9 +22,7 @@ public class CalculatorTest {
             }
                 question = console.nextLine();
             }
-            if (question.equalsIgnoreCase("no")){
-                break;
-            }
+
 
         } while ("yes".equals(question));
     }
