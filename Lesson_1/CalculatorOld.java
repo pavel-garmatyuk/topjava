@@ -1,4 +1,6 @@
-public class Calculator {
+import java.util.Scanner;
+
+public class CalculatorOld {
 
     public static void main(String[] args) {
         System.out.println("Введите первый операнад, затем знак арифметической операции, и второй операнд.\n"

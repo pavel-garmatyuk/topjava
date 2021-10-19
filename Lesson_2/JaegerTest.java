@@ -1,5 +1,7 @@
-public class JaegerTest {
+public class JaegerTest extends Jaeger{
     public static void main(String[] args) {
+
+        /**  ==>Getter and Setter<==
         Jaeger chernoAlpha = new Jaeger();
         Jaeger coyoteTango = new Jaeger();
         Jaeger horizonBrave = new Jaeger();
@@ -56,5 +58,37 @@ public class JaegerTest {
         horizonBrave.drift();
         horizonBrave.move();
         System.out.println(horizonBrave.scanKaiju());
+         */
+
+
+        Jaeger chernoAlpha = new JaegerTest("Cherno Alpha","Mark-1", "Russian Federation");
+        Jaeger coyoteTango = new JaegerTest("Coyote Tango", "Mark-1", "Japan", 85.34F,
+                2312.0F, 5, 7, 4);
+        Jaeger horizonBrave = new JaegerTest("Horizon Brave", "Mark-1", "China", 72.54F, 7.890F, 8, 4, 6);
+
+        System.out.println(chernoAlpha.scanKaiju());
+        coyoteTango.move();
+        horizonBrave.useVortexCannon();
+        System.out.println(chernoAlpha);
+        System.out.println(coyoteTango);
+        System.out.println(horizonBrave);
+
+    }
+    public JaegerTest() {
+        super();
+    }
+
+    public JaegerTest(String modelName, String mark, String origin) {
+        super(modelName, mark, origin);
+    }
+
+    public JaegerTest(String modelName, String mark, String origin, float height, float weight, int speed,
+                      int strength, int armor) {
+        super(modelName, mark, origin, height, weight, speed, strength, armor);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

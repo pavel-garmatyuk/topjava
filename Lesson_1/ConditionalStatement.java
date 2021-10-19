@@ -24,7 +24,7 @@ public class ConditionalStatement {
         char firstLetterName = 'M';
         if(firstLetterName == 'M') {
             System.out.println("M");
-        } if else (firstLetterName == 'I') {
+        } else if (firstLetterName == 'I') {
             System.out.println("I");
         } else {
             System.out.println("Other");
