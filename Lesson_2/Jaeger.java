@@ -8,6 +8,28 @@ public class Jaeger {
     private int strength;
     private int armor;
 
+    public Jaeger() {}
+
+    public Jaeger(String modelName, String mark, String origin) {
+        this.modelName = modelName;
+        this.mark = mark;
+        this.origin = origin;
+    }
+
+    public Jaeger(String modelName, String mark, String origin, float height, float weight) {
+        this(modelName, mark, origin);
+        this.height = height;
+        this.weight = weight;
+    }
+
+    public Jaeger(String modelName, String mark, String origin, float height, float weight, int speed,
+                  int strength, int armor) {
+        this(modelName, mark, origin, height, weight);
+        this.speed = speed;
+        this.strength = strength;
+        this.armor = armor;
+    }
+
     public String getModelName() {
         return modelName;
     }
@@ -89,39 +111,9 @@ public class Jaeger {
 
     }
 
-    public Jaeger() {
-    }
-
-    public Jaeger(String modelName, String mark, String origin) {
-        this.modelName = modelName;
-        this.mark = mark;
-        this.origin = origin;
-    }
-
-    public Jaeger(String modelName, String mark, String origin, float height, float weight) {
-        this(modelName, mark, origin);
-        this.height = height;
-        this.weight = weight;
-    }
-
-    public Jaeger(String modelName, String mark, String origin, float height, float weight, int speed,
-                  int strength, int armor) {
-        this(modelName, mark, origin, height, weight);
-        this.speed = speed;
-        this.strength = strength;
-        this.armor = armor;
-    }
-
-
     @Override
     public String toString() {
-        if (this.height == 0.0 && this.weight == 0.0 && this.speed == 0 && this.strength == 0 && this.armor == 0) {
-            return this.modelName + " " + this.mark + " " + this.origin;
-        }
-        if (this.height != 0.0 && this.weight != 0.0 && this.speed == 0 && this.strength == 0 && this.armor == 0) {
-            return this.modelName + " " + this.mark + " " + this.origin + " " + this.height + " " + this.weight;
-        }
-        return this.modelName + " " + this.mark + " " + this.origin + " " + this.height + " " + this.weight
-                + " " + this.speed + " " + this.strength + " " + this.armor;
+        return modelName + " " + mark + " " + origin + " " + height + " " + weight
+                + " " + speed + " " + strength + " " + armor;
     }
 }

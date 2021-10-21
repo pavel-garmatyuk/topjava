@@ -11,15 +11,16 @@ public class JaegerTest {
         gipsyDanger.setStrength(8);
         gipsyDanger.setArmor(6);
 
-        System.out.println("mark: " + gipsyDanger.getMark() + "\n" + "origin: " + gipsyDanger.getOrigin()
-                + "\n" + "name: " + gipsyDanger.getModelName() + "\n" + "height: " + gipsyDanger.getHeight()
-                + "\n" + "wight: " + gipsyDanger.getWeight() + "\n" + "speed: " + gipsyDanger.getSpeed()
-                + "\n" + "strength: " + gipsyDanger.getStrength() + "\n" + "armor: " + gipsyDanger.getArmor());
-        gipsyDanger.drift();
+        System.out.println("mark: " + gipsyDanger.getMark() + " " + "origin: " + gipsyDanger.getOrigin()
+                + " " + "name: " + gipsyDanger.getModelName() + " " + "height: " + gipsyDanger.getHeight()
+                + " " + "wight: " + gipsyDanger.getWeight() + " " + "speed: " + gipsyDanger.getSpeed()
+                + " " + "strength: " + gipsyDanger.getStrength() + " " + "armor: " + gipsyDanger.getArmor());
+
+        System.out.println(gipsyDanger.drift());
         gipsyDanger.move();
         gipsyDanger.scanKaiju();
 
-        Jaeger chernoAlpha = new Jaeger("Cherno Alpha","Mark-1", "Russian Federation");
+        Jaeger chernoAlpha = new Jaeger("Cherno Alpha", "Mark-1", "Russian Federation");
         Jaeger coyoteTango = new Jaeger("Coyote Tango", "Mark-1", "Japan", 85.34F,
                 2312.0F, 5, 7, 4);
         Jaeger horizonBrave = new Jaeger("Horizon Brave", "Mark-1",
@@ -31,6 +32,5 @@ public class JaegerTest {
         System.out.println(chernoAlpha);
         System.out.println(coyoteTango);
         System.out.println(horizonBrave);
-
     }
 }
