@@ -8,72 +8,69 @@ public class Jaeger {
     private int strength;
     private int armor;
 
-    /**
-     * ==>Getter and Setter<==
-     * public String getModelName() {
-     * return modelName;
-     * }
-     * <p>
-     * public void setModelName(String modelName) {
-     * this.modelName = modelName;
-     * }
-     * <p>
-     * public String getMark() {
-     * return mark;
-     * }
-     * <p>
-     * public void setMark(String mark) {
-     * this.mark = mark;
-     * }
-     * <p>
-     * public String getOrigin() {
-     * return origin;
-     * }
-     * <p>
-     * public void setOrigin(String origin) {
-     * this.origin = origin;
-     * }
-     * <p>
-     * public float getHeight() {
-     * return height;
-     * }
-     * <p>
-     * public void setHeight(float height) {
-     * this.height = height;
-     * }
-     * <p>
-     * public float getWeight() {
-     * return weight;
-     * }
-     * <p>
-     * public void setWeight(float weight) {
-     * this.weight = weight;
-     * }
-     * <p>
-     * public int getSpeed() {
-     * return speed;
-     * }
-     * <p>
-     * public void setSpeed(int speed) {
-     * this.speed = speed;
-     * }
-     * <p>
-     * public int getStrength() {
-     * return strength;
-     * }
-     * <p>
-     * public void setStrength(int strength) {
-     * this.strength = strength;
-     * }
-     * <p>
-     * public int getArmor() {
-     * return armor;
-     * }
-     * <p>
-     * public void setArmor(int armor) {
-     * this.armor = armor;
-     * }
-     */
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    public String getMark() {
+        return mark;
+    }
+
+    public void setMark(String mark) {
+        this.mark = mark;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public int getArmor() {
+        return armor;
+    }
+
+    public void setArmor(int armor) {
+        this.armor = armor;
+    }
 
     public boolean drift() {
         System.out.println("Вы вошли в дрифт");
