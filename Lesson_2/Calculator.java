@@ -1,13 +1,13 @@
 public class Calculator {
 
-    public static int solve(int operandOne, String mathSign, int operandTwo) {
+    public static int calculate(int operandOne, String mathSign, int operandTwo) {
         switch (mathSign) {
             case "+": return add(operandOne,operandTwo);
             case "-": return subtract(operandOne,operandTwo);
             case "*": return multiply(operandOne,operandTwo);
             case "/": return divide(operandOne,operandTwo);
             case "%": return getRemainder(operandOne,operandTwo);
-            case "^": return range(operandOne,operandTwo);
+            case "^": return exponentiation(operandOne,operandTwo);
             default: return 0;
         }
     }
@@ -37,7 +37,7 @@ public class Calculator {
         return result;
     }
 
-    private static int range(int a, int b) {
+    private static int exponentiation(int a, int b) {
         int result = 1;
         for (int i = 1; i <= b; i++) {
             result *= a;
