@@ -1,29 +1,48 @@
 import java.util.Random;
+import java.util.Scanner;
+
+/**
+ * ввод чисел - это игровой процесс, а по заданию он должен размещаться в GuessNumber
+ * в одном классе достаточно одного экземпляра Scanner
+ * удали все пустые строки перед } while (answer.equalsIgnoreCase("yes"));
+ * проверяй ответ игрока, а не то, что он выиграл или игра завершилась
+ */
 
 public class GuessNumber {
     private final int secretNumber;
-    private boolean gameStart = true;
+    private final Player playerOne;
+    private final Player playerTwo;
 
-    public GuessNumber() {
-        int min = 0;
-        int max = 100;
-        int diff = max - min;
-        Random random = new Random();
-        secretNumber = random.nextInt(diff + 1) + min;
+    public GuessNumber(Player playerOne, Player playerTwo) {
+        this.playerOne = playerOne;
+        this.playerTwo = playerTwo;
+        this.secretNumber = new Random().nextInt(101);
     }
 
-    public boolean isGameStart() {
-        return gameStart;
+    public void game() {
+        while (!playerOne.isWinner() || !playerTwo.isWinner()) {
+            System.out.println("Введите число:");
+            Scanner input = new Scanner(System.in);
+
+            playerOne.setNumber(input.nextInt());
+            checkNumber(playerOne);
+            if (playerOne.isWinner()) {
+                break;
+            } else {
+                playerTwo.setNumber(input.nextInt());
+                checkNumber(playerTwo);
+            }
+        }
     }
 
-    public void game(Player player) {
+    private void checkNumber(Player player) {
         if (player.getNumber() > secretNumber) {
             System.out.println("Данное число больше того, что загадал компьютер");
         } else if (player.getNumber() < secretNumber) {
             System.out.println("Данное число меньше того, что загадал компьютер");
         } else {
             System.out.println("Поздравляю " + player.getName() + ", число угадано!");
-            gameStart = false;
+            player.setWinner(true);
         }
     }
 }
