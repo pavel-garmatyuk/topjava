@@ -1,47 +1,39 @@
 public class Calculator {
+//    private final int operandOne;
+//    private final String mathSign;
+//    private final int operandTwo;
+
+//    public Calculator(int operandOne, String mathSign, int operandTwo) {
+//        this.operandOne = operandOne;
+//        this.mathSign = mathSign;
+//        this.operandTwo = operandTwo;
+//    }
 
     public static int calculate(int operandOne, String mathSign, int operandTwo) {
-        switch (mathSign) {
-            case "+": return add(operandOne,operandTwo);
-            case "-": return subtract(operandOne,operandTwo);
-            case "*": return multiply(operandOne,operandTwo);
-            case "/": return divide(operandOne,operandTwo);
-            case "%": return getRemainder(operandOne,operandTwo);
-            case "^": return exponentiation(operandOne,operandTwo);
-            default: return 0;
-        }
+        return switch (mathSign) {
+            case "+" -> operandOne + operandTwo;
+            case "-" -> operandOne - operandTwo;
+            case "*" -> operandOne * operandTwo;
+            case "/" -> div(operandOne, operandTwo);
+            case "%" -> operandOne % operandTwo;
+            case "^" -> power(operandOne, operandTwo);
+            default -> 0;
+        };
     }
 
-    private static int add(int a, int b) {
-        int result = a + b;
-        return result;
-    }
-
-    private static int subtract(int a, int b) {
-        int result = a - b;
-        return result;
-    }
-
-    private static int multiply(int a, int b) {
-        int result = a * b;
-        return result;
-    }
-
-    private static int divide(int a, int b) {
-        int result = a / b;
-        return result;
-    }
-
-    private static int getRemainder(int a, int b) {
-        int result = a % b;
-        return result;
-    }
-
-    private static int exponentiation(int a, int b) {
+    private static int power(int operandOne, int operandTwo) {
         int result = 1;
-        for (int i = 1; i <= b; i++) {
-            result *= a;
+        for (int i = 1; i <= operandTwo; i++) {
+            result *= operandOne;
         }
         return result;
+    }
+
+    private static int div(int operandOne, int operandTwo) {
+        if (operandTwo == 0) {
+            System.out.println("Деление на ноль!");
+            return 0;
+        }
+        return operandOne / operandTwo;
     }
 }
