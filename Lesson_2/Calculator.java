@@ -1,13 +1,4 @@
 public class Calculator {
-//    private final int operandOne;
-//    private final String mathSign;
-//    private final int operandTwo;
-
-//    public Calculator(int operandOne, String mathSign, int operandTwo) {
-//        this.operandOne = operandOne;
-//        this.mathSign = mathSign;
-//        this.operandTwo = operandTwo;
-//    }
 
     public static int calculate(int operandOne, String mathSign, int operandTwo) {
         return switch (mathSign) {

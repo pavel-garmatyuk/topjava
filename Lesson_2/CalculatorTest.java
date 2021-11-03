@@ -8,9 +8,22 @@ public class CalculatorTest {
             System.out.println("Введите первый операнд, затем знак арифметической операции, и второй операнд.\n"
                     + "Разрешенные знаки арифметической операции: \nСложение + \nВычитание - \nУмножение * \nДеление / "
                     + "\nВозвести в степень ^ \nПолучить остаток от деления %");
-            Calculator.calculate(console.nextInt(), console.nextLine(), console.nextInt());
-            System.out.println("Хотите продолжить вычисления? [yes/no]:");
-            answer = console.nextLine();
+
+            System.out.println(Calculator.calculate(Integer.parseInt(console.nextLine()),
+                    console.nextLine(), Integer.parseInt(console.nextLine())));
+
+            while (true) {
+                System.out.println("Хотите продолжить вычисления? [yes/no]:");
+                answer = console.nextLine();
+                if (answer.equalsIgnoreCase("yes")) {
+                    break;
+                }
+
+                if (answer.equalsIgnoreCase("no")) {
+                    break;
+                }
+            }
+
         } while ("yes".equals(answer));
     }
 }
