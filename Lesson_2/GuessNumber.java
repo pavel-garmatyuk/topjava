@@ -1,6 +1,16 @@
 import java.util.Random;
 import java.util.Scanner;
-
+/**
+ * проверки
+ * if (isTurn(playerOne)) {
+ *                 break;
+ *             }
+ *             if (isTurn(playerTwo)) {
+ *                 break;
+ *             }
+ * можно объединить в одну
+ * isTurn можно назвать makeMove (сделать шаг)
+ * вместо метода isWinner ты можешь возвращать boolean сразу из checkNumber*/
 public class GuessNumber {
     private final int secretNumber;
     private final Player playerOne;
@@ -14,17 +24,17 @@ public class GuessNumber {
 
     public void play() {
         while (true) {
-            if (isTurn(playerOne)) {
+            if (makeMove(playerOne)) {
                 break;
             }
 
-            if (isTurn(playerTwo)) {
+            if (makeMove(playerTwo)) {
                 break;
             }
         }
     }
 
-    private boolean isTurn(Player player) {
+    private boolean makeMove(Player player) {
         Scanner input = new Scanner(System.in);
         System.out.println(player.getName() + ", введите число:");
         player.setNumber(input.nextInt());
