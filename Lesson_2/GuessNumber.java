@@ -1,6 +1,5 @@
 import java.util.Random;
 import java.util.Scanner;
-
 public class GuessNumber {
     private final int secretNumber;
     private final Player playerOne;

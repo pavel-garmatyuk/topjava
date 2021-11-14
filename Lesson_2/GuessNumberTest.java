@@ -14,9 +14,9 @@ public class GuessNumberTest {
                 GuessNumber guessNumber = new GuessNumber(playerOne, playerTwo);
                 guessNumber.play();
             }
-                System.out.println("Хотите продолжить вычисления? [yes/no]:");
-                answer = console.nextLine();
+            System.out.println("Хотите продолжить вычисления? [yes/no]:");
+            answer = console.nextLine();
             }
-            while (!answer.equalsIgnoreCase("no")) ;
+        while (!answer.equalsIgnoreCase("no"));
         }
     }
