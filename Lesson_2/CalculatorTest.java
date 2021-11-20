@@ -9,8 +9,10 @@ public class CalculatorTest {
                 System.out.println("Введите первый операнд, затем знак арифметической операции, и второй операнд.\n"
                         + "Разрешенные знаки арифметической операции: \nСложение + \nВычитание - \nУмножение * \nДеление / "
                         + "\nВозвести в степень ^ \nПолучить остаток от деления %");
-                int result = Calculator.calculate(Integer.parseInt(console.nextLine()),
-                        console.nextLine(), Integer.parseInt(console.nextLine()));
+                int operandOne = Integer.parseInt(console.nextLine());
+                String mathSign = console.nextLine();
+                int operandTwo = Integer.parseInt(console.nextLine());
+                int result = Calculator.calculate(operandOne, mathSign, operandTwo);
                 System.out.println(result);
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]:");

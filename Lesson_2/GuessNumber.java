@@ -20,8 +20,8 @@ public class GuessNumber {
             }
             inputNumber(playerTwo);
         } while (!checkNumber(playerTwo));
-        Player isWinner = checkNumber(playerOne) ? playerOne : playerTwo;
-        String message = String.format("Поздравляю %s, число угадано!", isWinner.getName());
+        Player winner = checkNumber(playerOne) ? playerOne : playerTwo;
+        String message = String.format("Поздравляю %s, число угадано!", winner.getName());
         System.out.println(message);
     }
 
