@@ -16,7 +16,6 @@ public class GuessNumberTest {
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]:");
             answer = console.nextLine();
-            }
-        while (!answer.equalsIgnoreCase("no"));
-        }
+        } while (!answer.equalsIgnoreCase("no"));
     }
+}

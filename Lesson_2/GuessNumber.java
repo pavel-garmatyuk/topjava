@@ -1,14 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
 
-/*GuessNumber
-- после import оставляй пустую строку https://docs.google.com/document/d/1CcFKdXwgnL3h65izX1oY6PtUKQe9DV-I-YEQQ2RKu74/edit#bookmark=id.ynarjmc6p6m8
-- проверки if (makeMove(playerOne) || makeMove(playerTwo)) { можно поместить в while (сюда) {, а внутри его тела выводить какое-то сообщение
-- проверку player.getNumber() == secretNumber; из makeMove помести в checkNumber
-- в методе для проверки чисел для веток с проверкой > и < используй тернарный оператор.
-При этом дублирования кода/текста сообщения не должно быть.
-Данный оператор должен упростить проверку и вывод сообщения, а не усложнить или сделать ее громоздкой или нечитаемой
-checkNumber должен возвращать boolean*/
 public class GuessNumber {
     private final int secretNumber;
     private final Player playerOne;
@@ -21,30 +13,28 @@ public class GuessNumber {
     }
 
     public void play() {
-        Player player = playerTwo;
         do {
-            makeMove(playerOne);
+            inputNumber(playerOne);
             if (checkNumber(playerOne)) {
-                player = playerOne;
                 break;
-            } else {
-                makeMove(playerTwo);
             }
-        }
-        while (!checkNumber(playerTwo));
-        System.out.println("Поздравляю " + player.getName() + ", число угадано!");
+            inputNumber(playerTwo);
+        } while (!checkNumber(playerTwo));
+        Player isWinner = checkNumber(playerOne) ? playerOne : playerTwo;
+        String message = String.format("Поздравляю %s, число угадано!", isWinner.getName());
+        System.out.println(message);
     }
 
-    private void makeMove(Player player) {
+    private void inputNumber(Player player) {
         Scanner input = new Scanner(System.in);
         System.out.println(player.getName() + ", введите число:");
         player.setNumber(input.nextInt());
     }
 
     private boolean checkNumber(Player player) {
-        String massage = player.getNumber() > secretNumber ? ", данное число больше того, что загадал компьютер" :
-                ", данное число меньше того, что загадал компьютер";
-        System.out.println(player.getName() + massage);
+        String matching = player.getNumber() > secretNumber ? "больше" : "меньше";
+        String massage = String.format("%s, данное число %s того, что загадал компьютер", player.getName(), matching);
+        System.out.println(massage);
         return player.getNumber() == secretNumber;
     }
 }
