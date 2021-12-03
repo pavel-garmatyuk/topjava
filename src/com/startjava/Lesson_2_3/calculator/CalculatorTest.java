@@ -1,3 +1,5 @@
+package Lesson_2_3.calculator;
+
 import java.util.Scanner;
 
 public class CalculatorTest {
@@ -12,7 +14,7 @@ public class CalculatorTest {
                 int operandOne = Integer.parseInt(console.nextLine());
                 String mathSign = console.nextLine();
                 int operandTwo = Integer.parseInt(console.nextLine());
-                int result = Calculator.calculate(operandOne, mathSign, operandTwo);
+                int result = Lesson_2_3.calculator.Calculator.calculate(operandOne, mathSign, operandTwo);
                 System.out.println(result);
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]:");

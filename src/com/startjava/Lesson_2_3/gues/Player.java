@@ -1,3 +1,5 @@
+package Lesson_2_3.gues;
+
 public class Player {
     private final String name;
     private int number;

@@ -1,3 +1,5 @@
+package Lesson_2_3.gues;
+
 import java.util.Random;
 import java.util.Scanner;
 

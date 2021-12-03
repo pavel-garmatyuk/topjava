@@ -1,6 +1,8 @@
+package Lesson_1.gues;
+
 import java.util.Scanner;
 
-public class GuessNumberOld {
+public class MyFirstGame {
     public static void main(String[] args) {
         int secretNumber = (int) ((Math.random() * 100) + 1);
         System.out.println("Угадай число от 0 до 100.");
