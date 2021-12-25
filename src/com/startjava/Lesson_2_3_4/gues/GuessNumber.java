@@ -15,29 +15,40 @@ public class GuessNumber {
     }
 
     public void play() {
+        System.out.println("У каждого игрока по 10 попыток");
+        var playerOneIndexArray = 0;
+        var playerTwoIndexArray = 0;
         do {
-            inputNumber(playerOne);
+            inputNumber(playerOne, playerOneIndexArray++);
             if (checkNumber(playerOne)) {
                 break;
             }
-            inputNumber(playerTwo);
+            inputNumber(playerTwo, playerTwoIndexArray++);
         } while (!checkNumber(playerTwo));
         Player winner = checkNumber(playerOne) ? playerOne : playerTwo;
-        String message = String.format("Поздравляю %s, число угадано!", winner.getName());
+        var message = String.format("Игрок %s угадал число %d с %d попытки%n%s%n%s"
+                , winner.getName(), secretNumber, winner.getIndexArray() + 1, playerOne, playerTwo);
         System.out.println(message);
     }
 
-    private void inputNumber(Player player) {
+    private void inputNumber(Player player, int indexArray) {
         Scanner input = new Scanner(System.in);
         System.out.println(player.getName() + ", введите число:");
-        player.setNumber(input.nextInt());
+        player.setCount(indexArray);
+        player.setArrayNumber(Integer.parseInt(input.nextLine()), indexArray);
     }
 
     private boolean checkNumber(Player player) {
-        String matching = player.getNumber() > secretNumber ? "больше" : "меньше";
-        String massage = String.format("%s, данное число %s того, что загадал компьютер", player.getName(), matching);
+        var matching = player.getArrayNumber(player.getIndexArray()) > secretNumber
+                ? "больше" : "меньше";
+        var massage = String.format("%s, данное число %s того, что загадал компьютер%n",
+                player.getName(), matching);
+
+        if (player.getIndexArray() == 9) {
+            massage += String.format("У %s закончились попытки", player.getName());
+        }
         System.out.println(massage);
-        return player.getNumber() == secretNumber;
+        return player.getArrayNumber(player.getIndexArray()) == secretNumber;
     }
 }
 
