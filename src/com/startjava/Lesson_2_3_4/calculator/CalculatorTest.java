@@ -20,5 +20,4 @@ public class CalculatorTest {
             answer = console.nextLine();
         } while (!answer.equalsIgnoreCase("no"));
     }
-
 }
