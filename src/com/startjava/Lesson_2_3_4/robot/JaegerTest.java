@@ -1,4 +1,4 @@
-package Lesson_2_3.robot;
+package Lesson_2_3_4.robot;
 
 public class JaegerTest {
     public static void main(String[] args) {

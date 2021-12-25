@@ -1,4 +1,4 @@
-package Lesson_2_3.calculator;
+package Lesson_2_3_4.calculator;
 
 public class Calculator {
     public static int calculate(int operandOne, String mathSign, int operandTwo) {
