@@ -1,6 +1,5 @@
 package Lesson_2_3_4.gues;
 
-import java.util.Arrays;
 
 public class Player {
     private final String name;

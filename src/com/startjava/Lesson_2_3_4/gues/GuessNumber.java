@@ -39,6 +39,5 @@ public class GuessNumber {
         System.out.println(massage);
         return player.getNumber() == secretNumber;
     }
-
 }
 

@@ -8,7 +8,6 @@ public class GuessNumberTest {
     public static void main(String[] args) {
         Scanner sc = new Scanner(in);
         String answer = "yes";
-
         do {
             if (answer.equalsIgnoreCase("yes")) {
                 System.out.println("Введите имя первого игрока : ");
