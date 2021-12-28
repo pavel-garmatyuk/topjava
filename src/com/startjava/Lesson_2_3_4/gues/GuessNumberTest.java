@@ -2,11 +2,9 @@ package Lesson_2_3_4.gues;
 
 import java.util.Scanner;
 
-import static java.lang.System.in;
-
 public class GuessNumberTest {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(in);
+        Scanner sc = new Scanner(System.in);
         String answer = "yes";
         do {
             if (answer.equalsIgnoreCase("yes")) {
