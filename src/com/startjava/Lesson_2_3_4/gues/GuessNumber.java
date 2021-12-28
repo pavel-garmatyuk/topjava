@@ -16,39 +16,34 @@ public class GuessNumber {
 
     public void play() {
         System.out.println("У каждого игрока по 10 попыток");
-        var playerOneIndexArray = 0;
-        var playerTwoIndexArray = 0;
         do {
-            inputNumber(playerOne, playerOneIndexArray++);
+            inputNumber(playerOne);
             if (checkNumber(playerOne)) {
                 break;
             }
-            inputNumber(playerTwo, playerTwoIndexArray++);
+            inputNumber(playerTwo);
         } while (!checkNumber(playerTwo));
         Player winner = checkNumber(playerOne) ? playerOne : playerTwo;
         var message = String.format("Игрок %s угадал число %d с %d попытки%n%s%n%s"
-                , winner.getName(), secretNumber, winner.getIndexArray() + 1, playerOne, playerTwo);
+                , winner.getName(), secretNumber, winner.getCount() + 1, playerOne, playerTwo);
         System.out.println(message);
     }
 
-    private void inputNumber(Player player, int indexArray) {
+    private void inputNumber(Player player) {
         Scanner input = new Scanner(System.in);
         System.out.println(player.getName() + ", введите число:");
-        player.setCount(indexArray);
-        player.setArrayNumber(Integer.parseInt(input.nextLine()), indexArray);
+        var index = player.getCount();
+        player.setCount(++index);
+        player.setNumbers(input.nextInt(), index);
     }
 
     private boolean checkNumber(Player player) {
-        var matching = player.getArrayNumber(player.getIndexArray()) > secretNumber
+        var matching = player.getArrayValue(player.getCount()) > secretNumber
                 ? "больше" : "меньше";
-        var massage = String.format("%s, данное число %s того, что загадал компьютер%n",
-                player.getName(), matching);
-
-        if (player.getIndexArray() == 9) {
-            massage += String.format("У %s закончились попытки", player.getName());
-        }
+        var massage = player.getCount() == 9 ? String.format("%s, данное число %s того, что загадал компьютер",
+                player.getName(), matching) : String.format("У %s закончились попытки", player.getName());
         System.out.println(massage);
-        return player.getArrayNumber(player.getIndexArray()) == secretNumber;
+        return player.getArrayValue(player.getCount()) == secretNumber;
     }
 }
 
